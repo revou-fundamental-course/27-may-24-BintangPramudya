@@ -112,7 +112,7 @@ nav a:hover {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background-image: url("/assets/hero.jpg"); /* Gambar latar belakang */
+  background-image: url("assets/hero.jpg"); /* Gambar latar belakang */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* This creates the parallax effect */
@@ -146,7 +146,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/hero.jpg");
+  background-image: url("assets/hero.jpg");
   background-size: cover;
   background-position: center;
   filter: blur(5px); /* Efek blur */
@@ -214,7 +214,7 @@ section {
 .facilitationSection {
   position: relative;
   overflow: hidden;
-  background-image: url("/assets/lab.jpg"); /* Ganti dengan path gambar background Anda */
+  background-image: url("assets/lab.jpg"); /* Ganti dengan path gambar background Anda */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* This creates the parallax effect */
@@ -227,7 +227,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/assets/lab.jpg"); /* Ganti dengan path gambar background Anda */
+  background-image: url("assets/lab.jpg"); /* Ganti dengan path gambar background Anda */
   background-size: cover;
   background-position: center;
   filter: blur(3px); /* Efek blur */
