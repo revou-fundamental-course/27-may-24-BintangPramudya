@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header id="header" class="transparent">
+        <div class="logo">
+            <img src="/assets/logo-itsk-dr-soepraoen.png" alt="Logo">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#AboutSection">About</a>
+            <a href="#facilitationSection">Our Profile</a>
+            <a href="#message-us">Message Us</a>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome-section" class="welcome-section">
+            <div class="overlay-welcome"></div> <!-- Menambahkan div overlay -->
+            <div class="welcome-content">
+                <h2 class="welcome">Hi ..., Welcome To Website Prodi S1 Informatika</h2>
+                <p class="hero-subtitle"><span class="typed typing-cursor"
+                        data-typed-items="ITSK dr. Soepraoen, Kesdam V/BRW, Malang"></span></p>
+
+            </div>
+        </section>
+    </main>
+    <section id="AboutSection" class="AboutSection">
+        <h1 class="AboutHeader">Studi Informatika</h1>
+        <div class="about">
+            <p class="aboutParagraph">“Menjadi Program Studi Sarjana Informatika Terkemuka dalam mewujudkan Sumber Daya
+                Manusia Unggul di Bidang Pengembangan Teknologi Informasi dan Teknologi Kesehatan“.</p>
+        </div>
+        <div class="aboutImg">
+            <img src="/assets/studi-informatika.png" alt="">
+        </div>
+    </section>
+    <section id="facilitationSection" class="facilitationSection">
+        <h1 class="facilitationHeader">Our Facilitation</h1>
+        <div class="overlay-facilitation"></div>
+        <div id="slideshow" class="facilitation">
+            <div>
+                <img src="/assets/lab riset.jpg" alt="Lab Riset">
+                <p>Lab Riset</p>
+            </div>
+            <div>
+                <img src="/assets/lab pemrograman dan database.jpg" alt="Lab Pemrograman & Database">
+                <p>Lab Pemrograman & Database</p>
+            </div>
+            <div>
+                <img src="/assets/lab artifial intellegence.jpg" alt="Lab Artificial Intellegence">
+                <p>Lab Artificial Intellegence</p>
+            </div>
+        </div>
+    </section>
+    <section id="message-us" class="message-us">
+        <div class="form-container">
+            <h2>Message Us</h2>
+            <form id="myForm" onsubmit="return submitForm()">
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" placeholder="Nama">
+                </div>
+                <div class="form-group">
+                    <label for="tanggal-lahir">Tanggal Lahir</label>
+                    <input type="date" id="tanggal-lahir" name="tanggal-lahir">
+                </div>
+                <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <label class="radio-label"><input type="radio" name="jenis-kelamin"
+                            value="Laki-laki"><span>Laki-Laki</span></label>
+                    <label class="radio-label"><input type="radio" name="jenis-kelamin"
+                            value="Perempuan"><span>Perempuan</span></label>
+                </div>
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" name="pesan" rows="4" placeholder="Pesan"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+        <div class="current-info">
+            <p class="judul">Current Time</p>
+            <p>Nama:</p>
+            <p>Tanggal Lahir:</p>
+            <p>Jenis Kelamin:</p>
+            <p>Pesan:</p>
+        </div>
+
+    </section>
+    <button onclick="topFunction()" id="backToTopBtn" title="Go to top">
+        <img src="/assets/back-to-top.png" alt="Logo" style="height: 40px; width: 40px;">
+    </button>
+    <footer>
+        Created By <a href="https://www.instagram.com/bintangp3_" target="_blank">Bintang Pramudya</a>
+        <br>
+        &copy; 2024 Bintang Pramudya. All rights reserved.
+    </footer>
+
+    <!-- script -->
+    <script src="/js/script.js"></script>
+    <script>
+        // Ambil semua elemen gambar pada slideshow
+        var slides = document.querySelectorAll('#slideshow div');
+    
+        // Tentukan indeks slide saat ini
+        var currentSlide = 0;
+    
+        // Fungsi untuk menampilkan slide berikutnya
+        function nextSlide() {
+            slides[currentSlide].style.display = 'none'; // Sembunyikan slide saat ini
+            currentSlide = (currentSlide + 1) % slides.length; // Perbarui indeks slide
+            slides[currentSlide].style.display = 'block'; // Tampilkan slide berikutnya
+        }
+    
+        // Set interval untuk memanggil fungsi nextSlide setiap beberapa detik
+        setInterval(nextSlide, 2000); // Ganti 3000 dengan jumlah milidetik yang diinginkan
+    </script>
+    
+</body>
+
+</html>

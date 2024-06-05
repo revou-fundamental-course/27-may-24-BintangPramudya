@@ -1,0 +1,472 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Reset CSS dan styling awal */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0c1721; /* Latar belakang utama */
+  color: #333; /* Warna teks utama */
+}
+
+/* CSS responsif */
+@media only screen and (max-width: 768px) {
+  /* Mengubah padding pada elemen section */
+  section {
+    padding: 20px;
+  }
+  
+  /* Menyembunyikan logo pada header di layar kecil */
+  .logo {
+    display: none;
+  }
+  
+  /* Menyesuaikan margin pada navigasi */
+  nav {
+    margin-right: 20px;
+  }
+  
+  /* Mengubah lebar gambar pada bagian about */
+  .aboutImg img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Menyesuaikan padding pada form-container dan current-info di bagian message-us */
+  .message-us .form-container,
+  .message-us .current-info {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Menyesuaikan margin pada form-group */
+  .form-group {
+    margin-bottom: 5px;
+  }
+}
+
+/* Kontainer utama */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff; /* Latar belakang kontainer */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan kontainer */
+  border-radius: 8px; /* Sudut border-radius kontainer */
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  background-color: tra; /* Warna latar belakang header */
+  position: sticky; /* Header akan menempel di bagian atas saat digulir */
+  z-index: 1000; /* Indeks z untuk memastikan header muncul di atas elemen lain */
+  top: 0; /* Posisi header di bagian atas */
+}
+
+/* Header dengan latar belakang tidak transparan */
+.solid {
+  background-color: #0c1721; /* Warna latar belakang header */
+}
+
+/* Logo */
+.logo {
+  margin-left: 50px; /* Margin kiri pada logo */
+  margin-top: 10px; /* Margin atas pada logo */
+}
+
+.logo img {
+  height: 50px; /* Tinggi gambar logo */
+  border-radius: 50px; /* Sudut border-radius gambar logo */
+}
+
+/* Navigasi */
+nav {
+  display: flex;
+  gap: 15px;
+  margin-left: auto; /* Geser ke kiri */
+  margin-right: 50px; /* Geser ke kanan */
+}
+
+nav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #e9ecf0; /* Warna teks link */
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #424446; /* Warna latar belakang saat hover */
+  color: #fff; /* Warna teks saat hover */
+}
+
+/* Bagian Welcome */
+.welcome-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("/assets/hero.jpg"); /* Gambar latar belakang */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax effect */
+}
+
+/* Styling untuk bagian Section */
+section {
+  padding: 40px; /* Padding untuk semua bagian section */
+}
+
+/* Styling untuk bagian Konten Welcome */
+.welcome-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.welcome-content .welcome {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Efek blur untuk latar belakang Welcome */
+.welcome-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Efek blur */
+  z-index: 0;
+  background-attachment: fixed; /*parallax effect on the pseudo-element */
+}
+.overlay-welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0c172188; /* Warna biru dengan opacity 50% */
+  z-index: 0; /* Pastikan overlay berada di belakang konten lainnya */
+}
+
+/* Styling untuk teks welcome */
+.welcome2 {
+  color: #ffffff;
+  text-align: center;
+}
+/* Center align the text within the hero-subtitle */
+.hero-subtitle {
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure it takes the full height */
+}
+
+/* Hide the original span content to avoid double text */
+.hero-subtitle .typed {
+  display: inline;
+}
+
+/* about */
+.AboutHeader {
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+  font-size: 35px;
+}
+
+.aboutParagraph {
+  color: white;
+  text-align: center;
+}
+
+.aboutImg {
+  text-align: center;
+}
+
+.aboutImg img {
+  width: 700px;
+  margin-bottom: 50px;
+}
+
+.aboutParagraph {
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* Bagian Our Facilitation */
+.facilitationSection {
+  position: relative;
+  overflow: hidden;
+  background-image: url("/assets/lab.jpg"); /* Ganti dengan path gambar background Anda */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* This creates the parallax effect */
+}
+
+.facilitationSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/lab.jpg"); /* Ganti dengan path gambar background Anda */
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px); /* Efek blur */
+  z-index: 0;
+  background-attachment: fixed; /* Add this for parallax effect on the pseudo-element */
+}
+
+.facilitation {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.facilitationHeader {
+  text-align: center; /* Teks header untuk Our Facilitation */
+  color: #ffffff; /* Warna teks header */
+  position: relative;
+  z-index: 1;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.facilitation div {
+  flex: 1;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+.facilitation div img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-bottom: 10px;
+}
+
+.facilitation p {
+  color: #ffffff;
+}
+
+.overlay-facilitation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0c172188; /* Warna biru dengan opacity 50% */
+  z-index: 0; /* Pastikan overlay berada di belakang konten lainnya */
+}
+
+/* Bagian Message Us */
+.message-us {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px; /* Padding untuk bagian Message Us */
+}
+
+h2 {
+  color: #fff;
+}
+
+.message-us .form-container,
+.message-us .current-info {
+  width: 48%;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group input[type="radio"] {
+  margin-left: 10px;
+}
+
+.form-group .radio-label {
+  margin-right: 10px;
+  color: #333;
+}
+
+.form-group input[type="submit"] {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #00e5f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #00e5f3;
+}
+
+.current-info {
+  border: 1px solid #ddd;
+  padding: 10px; /* Reduced padding */
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin: 50px auto; /* Center align horizontally */
+  height: 300px;
+  max-width: 700px;
+}
+
+.current-info p {
+  color: black;
+  font-weight: bold;
+}
+
+span {
+  color: #ffffff;
+}
+
+/* Judul */
+
+#backToTopBtn {
+  display: none; /* Tombol disembunyikan secara default */
+  position: fixed; /* Diposisikan tetap saat digulir */
+  bottom: 20px; /* Jarak dari bawah halaman */
+  right: 20px; /* Jarak dari sisi kanan halaman */
+  z-index: 99; /* Menempatkan tombol di atas elemen lain */
+  font-size: 16px; /* Ukuran font */
+  border: none; /* Tanpa border */
+  outline: none; /* Tanpa outline */
+  background-color: #53a6ff00; /* Warna latar belakang tombol */
+  color: white; /* Warna teks */
+  cursor: pointer; /* Mengubah kursor saat diarahkan ke tombol */
+  padding: 15px; /* Padding tombol */
+  border-radius: 4px; /* Sudut border-radius */
+}
+
+#backToTopBtn:hover {
+  background-color: #0057b300; /* Warna latar belakang saat tombol dihover */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: 40px;
+  border-top: 1px solid #ddd;
+}
+footer > a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+footer > a:hover {
+  color: #00e5f3;
+}
+
+.typing-cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+  color: #ffffff; /* Adjust the color as needed */
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* responsive */
+
+/* Reset CSS dan styling awal */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0c1721; /* Latar belakang utama */
+  color: #333; /* Warna teks utama */
+}
+
+/* CSS responsif */
+@media only screen and (max-width: 768px) {
+  /* Mengubah padding pada elemen section */
+  section {
+    padding: 20px;
+  }
+  
+  /* Menyembunyikan logo pada header di layar kecil */
+  .logo {
+    display: none;
+  }
+  
+  /* Menyesuaikan margin pada navigasi */
+  nav {
+    margin-right: 20px;
+  }
+  
+  /* Mengubah lebar gambar pada bagian about */
+  .aboutImg img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Menyesuaikan padding pada form-container dan current-info di bagian message-us */
+  .message-us .form-container,
+  .message-us .current-info {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Menyesuaikan margin pada form-group */
+  .form-group {
+    margin-bottom: 5px;
+  }
+}
+
+
